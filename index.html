@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#07051a">
+  <title>Neon Runner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game" aria-label="Neon Runner game"></canvas>
+
+    <section id="hud" class="hidden" aria-label="Game statistics">
+      <div class="stat"><span>Score</span><strong id="score">000000</strong></div>
+      <div class="stat"><span>Best</span><strong id="best">000000</strong></div>
+      <div class="stat"><span>Coins</span><strong id="coins">0</strong></div>
+      <div class="stat"><span>Lives</span><strong id="lives" class="lives">♥ ♥ ♥</strong></div>
+      <div class="stat desktop-stat"><span>Distance</span><strong id="distance">0 m</strong></div>
+      <div id="power-status" class="power-status hidden"></div>
+      <div class="hud-actions">
+        <button id="pause-btn" class="icon-btn" aria-label="Pause game">Ⅱ</button>
+        <button id="sound-btn" class="icon-btn" aria-label="Toggle sound">♪</button>
+      </div>
+    </section>
+
+    <section id="start-screen" class="screen active">
+      <div class="logo-mark"><i></i><i></i><i></i></div>
+      <p class="eyebrow">RUN // SURVIVE // ASCEND</p>
+      <h1>NEON<br><em>RUNNER</em></h1>
+      <p class="tagline">Race through the electric skyline.</p>
+      <div class="menu-buttons">
+        <button id="play-btn" class="primary">PLAY <span>▶</span></button>
+        <button id="how-btn" class="secondary">HOW TO PLAY</button>
+      </div>
+      <p class="control-hint">SPACE / ↑ / TAP TO JUMP</p>
+    </section>
+
+    <section id="how-screen" class="screen">
+      <div class="panel compact">
+        <p class="eyebrow">FIELD MANUAL</p>
+        <h2>HOW TO PLAY</h2>
+        <div class="instructions">
+          <div><b class="key">SPACE</b><p><strong>Jump</strong><br>Avoid hazards and reach coins.</p></div>
+          <div><b class="symbol coin-symbol">●</b><p><strong>Collect</strong><br>Coins add 100 bonus points.</p></div>
+          <div><b class="symbol shield-symbol">⬡</b><p><strong>Power up</strong><br>Grab shields, magnets, 2× and boosts.</p></div>
+          <div><b class="symbol heart-symbol">♥</b><p><strong>Survive</strong><br>You have three lives. Run far!</p></div>
+        </div>
+        <button id="how-play-btn" class="primary">LET'S RUN <span>▶</span></button>
+        <button id="back-btn" class="text-btn">← BACK</button>
+      </div>
+    </section>
+
+    <section id="pause-screen" class="screen">
+      <div class="panel compact">
+        <p class="eyebrow">SYSTEM PAUSED</p>
+        <h2>TAKE A BREATH</h2>
+        <button id="resume-btn" class="primary">RESUME <span>▶</span></button>
+        <button id="restart-btn" class="secondary">RESTART</button>
+        <button id="menu-btn" class="text-btn">MAIN MENU</button>
+      </div>
+    </section>
+
+    <section id="gameover-screen" class="screen">
+      <div class="panel result-panel">
+        <p class="eyebrow">RUN TERMINATED</p>
+        <h2>GAME OVER</h2>
+        <div class="result-grid">
+          <div><span>Final score</span><strong id="final-score">0</strong></div>
+          <div><span>High score</span><strong id="final-best">0</strong></div>
+          <div><span>Coins</span><strong id="final-coins">0</strong></div>
+          <div><span>Distance</span><strong id="final-distance">0 m</strong></div>
+        </div>
+        <button id="again-btn" class="primary">PLAY AGAIN <span>↻</span></button>
+        <button id="over-menu-btn" class="text-btn">MAIN MENU</button>
+      </div>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
